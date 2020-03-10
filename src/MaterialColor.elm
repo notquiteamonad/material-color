@@ -1,8 +1,24 @@
 module MaterialColor exposing
-    ( Color(..)
-    , Shade(..)
+    ( Color(..), Shade(..)
     , toCssColor
     )
+
+{-| This library contains all of Google's material colors along with
+black, white, and custom colors.
+
+It works seamlessly with rtfeldman/elm-css.
+
+
+# Defining Colors
+
+@docs Color, Shade
+
+
+# Using Colors with rtfeldman/elm-css
+
+@docs toCssColor
+
+-}
 
 import Css
 
@@ -34,6 +50,12 @@ type Shade
     | S900A String
 
 
+{-| A color value, usually encompassing a color variant and a shade of the color.
+Exceptions are black, white, and custom colors.
+
+Custom colors can be defined by hex values as you would in css (without the #).
+
+-}
 type Color
     = Red Shade
     | Pink Shade
@@ -61,6 +83,8 @@ type Color
     | Hex String
 
 
+{-| Converts from a Color to a Css.Color (from rtfeldman/elm-css).
+-}
 toCssColor : Color -> Css.Color
 toCssColor c =
     case c of
