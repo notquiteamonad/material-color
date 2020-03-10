@@ -53,6 +53,9 @@ type Shade
 {-| A color value, usually encompassing a color variant and a shade of the color.
 Exceptions are black, white, and custom colors.
 
+Black and white have variants which accept a 2-character hex string for an alpha value
+(i.e. "80" would be 50% alpha).
+
 Custom colors can be defined by hex values as you would in css (without the #).
 
 -}
