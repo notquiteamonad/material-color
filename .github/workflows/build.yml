@@ -1,0 +1,19 @@
+name: Build
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Reattach HEAD
+        run: git checkout ${{ github.head_ref }}
+      - name: Setup Elm environment
+        uses: JorelAli/setup-elm@v1
+      - name: Build
+        run: >-
+          mkdir out &&
+          elm make
+      - name: Clean up
+        run: git add . && git reset HEAD --hard

@@ -1,0 +1,13 @@
+name: Check Formatting
+
+on: [push]
+
+jobs:
+  check-formatting:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install elm formatter
+        run: npm i elm-format
+      - name: Check formatting
+        run: ./node_modules/elm-format/bin/elm-format --validate `find src -regex ".*\.elm"`
