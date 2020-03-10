@@ -3,7 +3,7 @@
     "name": "samueldple/material-color",
     "summary": "Material colours to work with rtfeldman/elm-css",
     "license": "MIT",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "exposed-modules": [
         "MaterialColor"
     ],
